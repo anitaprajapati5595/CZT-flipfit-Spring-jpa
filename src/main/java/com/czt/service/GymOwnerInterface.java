@@ -3,6 +3,10 @@
  */
 package com.czt.service;
 
+import java.util.List;
+
+import com.czt.entity.*;
+
 /**
  * 
  */
@@ -16,5 +20,7 @@ public interface GymOwnerInterface {
 
 	public void editOwnersRegisteredGymsandSlots();
 
-	public boolean addGymCenter();
+	public GymCenter addGymCenter(GymCenter gymCenter);
+
+	public List<GymCenter> getAllGymCenter();
 }

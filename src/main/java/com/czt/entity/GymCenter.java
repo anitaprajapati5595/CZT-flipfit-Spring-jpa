@@ -1,9 +1,8 @@
 /**
  * 
  */
-package com.czt.bean;
+package com.czt.entity;
 
-import java.time.LocalDate;
 import java.time.LocalTime;
 
 import jakarta.persistence.Entity;
@@ -15,51 +14,38 @@ import jakarta.persistence.Table;
 /**
  * 
  */
-
+@Entity
+@Table(name = "gym_center")
 public class GymCenter {
 
-	private int centerId;
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private Long centerId;
 
 	private String centerName;
 	private String address;
 	private String city;
 	private String state;
 	private String zipCode;
-	private String phonNumber;
+	private String phoneNumber;
 	private String email;
 	private LocalTime openingTime;
 	private LocalTime closingTime;
 	private String managerName;
 	private String capacity;
-
-	public GymCenter(String centerName, String address, String city, String state, String zipCode, String phonNumber,
-			String email, LocalTime openingTime, LocalTime closingTime, String managerName, String capacity) {
-		super();
-
-		this.centerName = centerName;
-		this.address = address;
-		this.city = city;
-		this.state = state;
-		this.zipCode = zipCode;
-		this.phonNumber = phonNumber;
-		this.email = email;
-		this.openingTime = openingTime;
-		this.closingTime = closingTime;
-		this.managerName = managerName;
-		this.capacity = capacity;
-	}
+	private String status;
 
 	/**
 	 * @return the centerId
 	 */
-	public int getCenterId() {
+	public Long getCenterId() {
 		return centerId;
 	}
 
 	/**
 	 * @param centerId the centerId to set
 	 */
-	public void setCenterId(int centerId) {
+	public void setCenterId(Long centerId) {
 		this.centerId = centerId;
 	}
 
@@ -136,15 +122,15 @@ public class GymCenter {
 	/**
 	 * @return the phonNumber
 	 */
-	public String getPhonNumber() {
-		return phonNumber;
+	public String getPhoneNumber() {
+		return phoneNumber;
 	}
 
 	/**
 	 * @param phonNumber the phonNumber to set
 	 */
-	public void setPhonNumber(String phonNumber) {
-		this.phonNumber = phonNumber;
+	public void setPhoneNumber(String phoneNumber) {
+		this.phoneNumber = phoneNumber;
 	}
 
 	/**
@@ -215,6 +201,20 @@ public class GymCenter {
 	 */
 	public void setCapacity(String capacity) {
 		this.capacity = capacity;
+	}
+
+	/**
+	 * @return the status
+	 */
+	public String getStatus() {
+		return status;
+	}
+
+	/**
+	 * @param status the status to set
+	 */
+	public void setStatus(String status) {
+		this.status = status;
 	}
 
 }
