@@ -42,23 +42,22 @@ public class GymOwnerService implements GymOwnerInterface {
 	}
 
 	public GymCenter addGymCenter(GymCenter gymCenter) {
-		/*
-		 * User existingUser =
-		 * gymCenterRepository.findByUserNameAndRole(user.getUserName(),
-		 * user.getRole());
-		 * 
-		 * if (existingUser != null) { throw new UserAlreadyExistsException(
-		 * "User with name '" + user.getUserName() + "' and role '" + user.getRole() +
-		 * "' already exists."); } else {
-		 */
-		// User does not exist → save new user
+
 		return gymCenterRepository.save(gymCenter);
-		// }
 	}
 
 	@Override
 	public List getAllGymCenter() {
 		return gymCenterRepository.findAll();
+	}
+
+	@Override
+	public GymCenter updateymCenter(Long id, GymCenter updatedGymCenter) {
+		if (gymCenterRepository.existsByCenterId(id)) {
+			updatedGymCenter.setCenterId(id);
+			return gymCenterRepository.save(updatedGymCenter);
+		}
+		return null;
 	}
 
 }

@@ -33,7 +33,7 @@ public class GymCenter {
 	private LocalTime closingTime;
 	private String managerName;
 	private String capacity;
-	private String status;
+	private String status = "Approval_Pending";
 
 	/**
 	 * @return the centerId

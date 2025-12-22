@@ -20,7 +20,9 @@ public interface GymOwnerInterface {
 
 	public void editOwnersRegisteredGymsandSlots();
 
-	public GymCenter addGymCenter(GymCenter gymCenter);
+	public GymCenter addGymCenter(GymCenter updatedGymCenter);
 
 	public List<GymCenter> getAllGymCenter();
+	
+	public GymCenter updateymCenter(Long id,GymCenter updatedGymCenter);
 }

@@ -19,4 +19,6 @@ public interface UserRepository extends JpaRepository<User, Long> {
 
 	boolean deleteByUserId(Long id);
 
+	User findByUserNameAndPasswordAndRole(String userName, String password, String role);
+
 }

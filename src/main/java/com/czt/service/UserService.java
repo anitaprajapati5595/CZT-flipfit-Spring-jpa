@@ -60,4 +60,14 @@ public class UserService implements UserInterface {
 		return userRepository.deleteByUserId(id);
 	}
 
+	public boolean verifyUser(String userName, String password, String role) {
+		User existingUser = userRepository.findByUserNameAndPasswordAndRole(userName, password,role);
+
+		if (existingUser != null) {
+			return true;
+		} else {
+			return false;
+		}
+	}
+
 }

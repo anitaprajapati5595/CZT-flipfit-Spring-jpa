@@ -20,4 +20,6 @@ public interface UserInterface {
 
 	User updateUser(Long id, User updatedUser);
 
+	boolean verifyUser(String username, String password, String role);
+
 }
